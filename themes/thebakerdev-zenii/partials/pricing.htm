@@ -1,0 +1,98 @@
+<section id="pricing" class="pricing section bg-gray">
+    <div class="container mx-auto">
+        <h2 class="section__title text-center mb-16" data-sal="fade" data-sal-easing="ease-in-cubic">Daftar Harga</h2>
+        <div class="pricing__items">
+            {% if (this.theme.pricing_plans|length > 0) %}
+                {% for plan in this.theme.pricing_plans %}
+                    <div class="pricing__item {{ plan.highlighted ? 'pricing__item--active' }}" data-sal="fade" data-sal-easing="ease-in-cubic" data-sal-duration="400">
+                        <div class="pricing__item-content">
+                            <h3 class="pricing__item-title">{{ plan.plan_title }}</h3>
+                            <p class="pricing__item-price"><span>{{ plan.currency }}</span><span>{{ plan.price }}</span>/{{ plan.plan_type }}</p>
+                            <ul class="pricing__item-features">
+                                {% for feature in plan.plan_features|split(',') %}
+                                    <li>{{ feature }}</li>
+                                {% endfor %} 
+                            </ul>
+                        </div>
+                        <a href="{{ plan.button_url }}" class="btn {{ plan.highlighted ? '': 'btn--primary'}}">{{ plan.button_text }}</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="pricing__item" data-sal="fade" data-sal-easing="ease-in-cubic" data-sal-duration="400">
+                    <div class="pricing__item-content">
+                        <h3 class="pricing__item-title">Free</h3>
+                        <p class="pricing__item-price"><span></span><span></span></p>
+                        <ul class="pricing__item-features">
+                            <li>Jumlah pesan yang dapat dikirim terbatas</li>
+                            <li>Dapat menikmati fitur yang tersedia di ZiMail</li>
+                            <li>Dapat mengirim video atau foto dengan ukuran file kecil</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn--primary">Subscribe</a>
+                </div>
+                <div class="pricing__item pricing__item--active" data-sal="fade" data-sal-easing="ease-in-cubic" data-sal-duration="400">
+                    <div class="pricing__item-content">
+                        <h3 class="pricing__item-title">Premium</h3>
+                        <p class="pricing__item-price"><span>Rp.</span><span>299.000</span>Tanpa biaya Bulanan/Tahunan</p>
+                        <ul class="pricing__item-features">
+                            <li>Jumlah pesan yang dikirim tanpa batas atau bisa di gunakan sepuasnya</li>
+                            <li>Dapat menikmati fitur yang tersedia di ZiMail</li>
+                            <li>Dapat mengirim video atau foto dengan ukuran file besar</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn">Subscribe</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+<section id="pricing" class="pricing section bg-red">
+    <div class="container mx-auto">
+        <h2 class="section__title text-center mb-16" data-sal="fade" data-sal-easing="ease-in-cubic">Pertanyaan yang sering di tanyakan</h2>
+        <div class="pricing__items">
+            {% if (this.theme.pricing_plans|length > 0) %}
+                {% for plan in this.theme.pricing_plans %}
+                    <div class="pricing__item {{ plan.highlighted ? 'pricing__item--active' }}" data-sal="fade" data-sal-easing="ease-in-cubic" data-sal-duration="400">
+                        <div class="pricing__item-content">
+                            <h3 class="pricing__item-title">{{ plan.plan_title }}</h3>
+                            <p class="pricing__item-price"><span>{{ plan.currency }}</span><span>{{ plan.price }}</span>/{{ plan.plan_type }}</p>
+                            <ul class="pricing__item-features">
+                                {% for feature in plan.plan_features|split(',') %}
+                                    <li>{{ feature }}</li>
+                                {% endfor %} 
+                            </ul>
+                        </div>
+                        <a href="{{ plan.button_url }}" class="btn {{ plan.highlighted ? '': 'btn--primary'}}">{{ plan.button_text }}</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="pricing__item" data-sal="fade" data-sal-easing="ease-in-cubic" data-sal-duration="400">
+                    <div class="pricing__item-content">
+                        <h3 class="pricing__item-title">Kenapa saya harus memakai ZiMail?</h3>
+                        <ul class="pricing__item-features">
+                            <li>Karena di ZiMail anda bisa mendapatkan fitur-fitur yang belum tentu di miliki oleh aplikasi lain</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pricing__item pricing__item--active" data-sal="fade" data-sal-easing="ease-in-cubic" data-sal-duration="400">
+                    <div class="pricing__item-content">
+                        <h3 class="pricing__item-title">Apa keunggulan dari ZiMail?</h3>
+                        <ul class="pricing__item-features">
+                            <li>ZiMail di rancang untuk lebih mudah di access dan cara menggunakannya juga tidak rumit</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pricing__item" data-sal="fade" data-sal-easing="ease-in-cubic" data-sal-duration="400">
+                    <div class="pricing__item-content">
+                        <h3 class="pricing__item-title">Apakah ZiMail bisa di akses melalui HP/Laptop?</h3>
+                        <ul class="pricing__item-features">
+                            <li>BISA! Karena platform aplikasi kami berbasis web based,</li>
+                            <li>artinya anda bisa mengaksesnya via browser apapun baik di laptop/pc/hp/OS windows,</li>
+                            <li>maupun Mac, asalkan masih terkoneksi dengan internet</li>
+                        </ul>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

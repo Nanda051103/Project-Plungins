@@ -1,0 +1,49 @@
+<section id="testimonials" class="testimonials container section mx-auto">
+    <div class="w-full md:w-1/2 pl-0 md:pl-16 text-center md:text-left">
+        <h2 class="w-full md:w-3/4 font-bold text-5xl leading-none mb-6" data-sal="fade" data-sal-easing="ease-in-cubic">Apa yang dikatakan pelanggan kami</h2>
+        <p class="w-full md:w-3/4" data-sal="fade" data-sal-easing="ease-in-cubic">Inilah beberapa pendapat atau komentar para pelanggan</p>
+    </div>
+    <div class="w-full md:w-1/2 pt-12 md:pt-0">
+        <div class="testimonial__slider" data-sal="fade" data-sal-easing="ease-in-cubic">
+            <div class="glider">
+                {% if (this.theme.testimonials|length > 0) %}
+                    {% for testimonial in this.theme.testimonials %} 
+                    <div class="testimonial">
+                        <div class="testimonial__content">
+                            <img src="{{ testimonial.image ? testimonial.image|media : 'https://i.pravatar.cc/100?img=8' }}" alt="Customer Testimonial Image" class="testimonial__image">
+                            <strong class="testimonial__name">{{ testimonial.name }}</strong>
+                            <p class="testimonial__company text-secondary mb-4">{{ testimonial.company }}</p>
+                            <em class="testimonial__comment text-sm">{{ testimonial.comment }}</em>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="testimonial">
+                        <div class="testimonial__content">
+                            <img src="{{ testimonial.image ? testimonial.image|media : 'https://i.pravatar.cc/100?img=8' }}" alt="Customer Testimonial Image" class="testimonial__image">
+                            <strong class="testimonial__name">John Doe</strong>
+                            <em class="testimonial__comment text-sm">ZiMail mungkin dapat memudahkan kita untuk mengirim pesan jarak jauh selain menggunakan Gmail.</em>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial__content">
+                            <img src="{{ 'assets/dist/images/Profil2.jfif'|theme }}" alt="Customer Testimonial Image" class="testimonial__image">
+                            <strong class="testimonial__name">Lissa</strong>
+                            <em class="testimonial__comment text-sm">Beberapa orang mungkin harus mencoba menggunakan ZiMail karena disini terdapat beberapa fitur yang mungkin tidak ada di aplkasi lain.</em>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial__content">
+                            <img src="{{ 'assets/dist/images/Profil3.png'|theme }}" alt="Customer Testimonial Image" class="testimonial__image">
+                            <strong class="testimonial__name">Mike</strong>
+                            <em class="testimonial__comment text-sm">Saya suka dengan aplikasi ZiMail ini selain memiliki fitur unik cara menggunakannya juga termasuk simple atau mudah.</em>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+            <button class="glider-prev material-icons">keyboard_arrow_left</button>
+            <button class="glider-next material-icons">keyboard_arrow_right</button> 
+            <div class="glider__dots"></div>
+        </div>
+    </div>
+</section>
